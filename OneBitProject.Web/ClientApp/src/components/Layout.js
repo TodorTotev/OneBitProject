@@ -8,12 +8,6 @@ export class Layout extends Component {
   render() {
     return (
       <div>
-        <head>
-          <link
-            rel='stylesheet'
-            href='https://fonts.googleapis.com/icon?family=Material+Icons'
-          />
-        </head>
         <Header />
         <Container>{this.props.children}</Container>
       </div>

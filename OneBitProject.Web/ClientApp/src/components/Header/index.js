@@ -41,8 +41,8 @@ const Header = () => {
                   value={value}
                   aria-label="Navigation Tabs"
                 >
-                  <Tab href="/home" label={"Home"} />
-                  <Tab label={"Customers"} />
+                  <Tab value={0} href="/" label={"Home"} />
+                  <Tab value={1} href="/customers"label={"Customers"} />
                 </Tabs>
               </Grid>
             </Grid>
