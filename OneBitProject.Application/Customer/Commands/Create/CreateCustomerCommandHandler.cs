@@ -6,6 +6,7 @@ namespace OneBitProject.Application.Customer.Commands.Create
     using System.Threading.Tasks;
 
     using MediatR;
+    using OneBitProject.Application.Infrastructure.Automapper;
     using OneBitProject.Application.Interfaces;
     using OneBitProject.Domain.Entities;
 
@@ -22,15 +23,7 @@ namespace OneBitProject.Application.Customer.Commands.Create
         {
             request = request ?? throw new ArgumentNullException(nameof(request));
 
-            var customer = new Customer
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                PhoneNumber = request.PhoneNumber,
-                Gender = request.Gender,
-                Status = request.Status,
-                Orders = new List<Order>(),
-            };
+            var customer = request.To<Customer>();
 
             await this.customersRepository.AddAsync(customer);
             await this.customersRepository.SaveChangesAsync(cancellationToken);

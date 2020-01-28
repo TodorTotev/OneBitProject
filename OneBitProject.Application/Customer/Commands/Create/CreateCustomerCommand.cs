@@ -1,8 +1,10 @@
 namespace OneBitProject.Application.Customer.Commands.Create
 {
     using MediatR;
+    using OneBitProject.Application.Interfaces.Mapping;
+    using OneBitProject.Domain.Entities;
 
-    public class CreateCustomerCommand : IRequest<int>
+    public class CreateCustomerCommand : IRequest<int>, IMapTo<Customer>
     {
         public string FirstName { get; set; }
 
