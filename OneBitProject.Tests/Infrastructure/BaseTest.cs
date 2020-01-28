@@ -21,6 +21,8 @@ namespace OneBitProject.Tests.Infrastructure
             this.dbContext = ApplicationDbContextFactory.Create();
             this.deletableEntityRepository = new EfDeletableEntityRepository<T>(this.dbContext);
             this.mediatorMock = new Mock<IMediator>();
+
+            MapperInitializer.InitializeMapper();
         }
 
         public void Dispose()
