@@ -1,5 +1,3 @@
-using OneBitProject.Domain.Infrastructure;
-
 namespace OneBigProject.Persistence
 {
     using System;
@@ -9,6 +7,9 @@ namespace OneBigProject.Persistence
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
+    using OneBigProject.Persistence.Configurations;
+    using OneBitProject.Domain.Entities;
+    using OneBitProject.Domain.Infrastructure;
 
     public class ApplicationDbContext : DbContext
     {
@@ -21,7 +22,10 @@ namespace OneBigProject.Persistence
             : base(options)
         {
         }
-        
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -44,6 +48,8 @@ namespace OneBigProject.Persistence
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            CustomerConfiguration.Configure(builder);
+            OrderConfiguration.Configure(builder);
 
             base.OnModelCreating(builder);
 
