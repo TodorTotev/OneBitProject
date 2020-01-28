@@ -30,6 +30,7 @@
     <ItemGroup>
       <ProjectReference Include="..\OneBigProject.Persistence\OneBigProject.Persistence.csproj" />
       <ProjectReference Include="..\OneBitProject.Application\OneBitProject.Application.csproj" />
+      <ProjectReference Include="..\OneBitProject.Common\OneBitProject.Common.csproj" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\OneBitProject.Common\OneBitProject.Common.csproj" />
       <ProjectReference Include="..\OneBitProject.Domain\OneBitProject.Domain.csproj" />
     </ItemGroup>
 
