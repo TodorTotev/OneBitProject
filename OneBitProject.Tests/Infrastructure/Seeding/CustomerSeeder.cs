@@ -16,6 +16,17 @@ namespace OneBitProject.Tests.Infrastructure.Seeding
                 PhoneNumber = "0885359164",
                 Status = "Active",
             });
+
+            dbContext.Customers.AddAsync(new Customer
+            {
+                Id = 2,
+                FirstName = "John",
+                LastName = "Doe",
+                Gender = "Male",
+                PhoneNumber = "0885359164",
+                Status = "Active",
+                IsDeleted = true,
+            });
         }
     }
 }
