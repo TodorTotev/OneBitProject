@@ -30,7 +30,10 @@ namespace OneBitProject.Tests.Infrastructure
 
         public static void Seed(ApplicationDbContext dbContext)
         {
-            var seeders = new List<ITestSeeder>();
+            var seeders = new List<ITestSeeder>
+            {
+                new CustomerSeeder(),
+            };
 
             foreach (var seeder in seeders)
             {
