@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OneBigProject.Persistence.Repositories;
 using OneBitProject.Application;
+using OneBitProject.Application.Interfaces;
 
 namespace OneBitProject.Web
 {
@@ -23,8 +25,11 @@ namespace OneBitProject.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+
             services.AddMediatR(typeof(ApplicationDependencyInjectionHelper).Assembly);
+            
+            services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
