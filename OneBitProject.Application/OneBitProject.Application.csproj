@@ -13,12 +13,18 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="MediatR" Version="8.0.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
       <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\OneBitProject.Domain\OneBitProject.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Customer\Commands" />
+      <Folder Include="Customer\Queries" />
     </ItemGroup>
 
 </Project>
