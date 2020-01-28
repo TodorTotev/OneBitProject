@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace OneBitProject.Controllers
+namespace OneBitProject.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]

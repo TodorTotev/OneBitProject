@@ -1,6 +1,6 @@
 using System;
 
-namespace OneBitProject
+namespace OneBitProject.Web
 {
     public class WeatherForecast
     {
