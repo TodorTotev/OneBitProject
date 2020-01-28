@@ -1,5 +1,7 @@
 namespace OneBitProject.Web
 {
+    using System.Reflection;
+
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -12,6 +14,8 @@ namespace OneBitProject.Web
     using OneBigProject.Persistence.Repositories;
     using OneBigProject.Persistence.Seeding;
     using OneBitProject.Application;
+    using OneBitProject.Application.Common.Models;
+    using OneBitProject.Application.Infrastructure.Automapper;
     using OneBitProject.Application.Interfaces;
 
     public class Startup
@@ -44,6 +48,9 @@ namespace OneBitProject.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            AutoMapperConfig.RegisterMappings(
+                typeof(CustomerLookupModel).GetTypeInfo().Assembly);
+
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
