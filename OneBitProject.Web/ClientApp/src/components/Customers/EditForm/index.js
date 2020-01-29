@@ -38,7 +38,7 @@ const statuses = [
     label: "Inactive"
   }
 ];
-const EditCustomerForm = (props) => {
+const EditCustomerForm = props => {
   const classes = useStyles();
 
   const [id, setId] = React.useState();
@@ -50,12 +50,16 @@ const EditCustomerForm = (props) => {
 
   React.useEffect(() => {
     userService.getCustomer(props.match.params.id).then(data => {
-      setId(data.id);
-      setGender(data.gender);
-      setStatus(data.status);
-      setFirstName(data.firstName);
-      setLastName(data.lastName);
-      setPhoneNumber(data.phoneNumber);
+      if (!data.id) {
+        return window.location.href = "404";
+      } else {
+        setId(data.id);
+        setGender(data.gender);
+        setStatus(data.status);
+        setFirstName(data.firstName);
+        setLastName(data.lastName);
+        setPhoneNumber(data.phoneNumber);
+      }
     });
   }, []);
 
@@ -118,7 +122,7 @@ const EditCustomerForm = (props) => {
   const handleOnSubmit = () => {
     const obj = { id, firstName, lastName, phoneNumber, gender, status };
     userService.updateCustomer(obj);
-    props.history.push("/customers")
+    props.history.push("/customers");
   };
 
   return (
@@ -187,6 +191,6 @@ const EditCustomerForm = (props) => {
       </form>
     </div>
   );
-}
+};
 
-export default withRouter(EditCustomerForm)
+export default withRouter(EditCustomerForm);
