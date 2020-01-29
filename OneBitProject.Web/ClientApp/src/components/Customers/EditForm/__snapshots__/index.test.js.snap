@@ -21,8 +21,8 @@ exports[`renders correctly 1`] = `
       <label
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
         data-shrink={true}
-        htmlFor="outlined-full-width"
-        id="outlined-full-width-label"
+        htmlFor="firstName"
+        id="firstName-label"
       >
         First Name
       </label>
@@ -35,7 +35,7 @@ exports[`renders correctly 1`] = `
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input"
           disabled={false}
-          id="outlined-full-width"
+          id="firstName"
           onAnimationStart={[Function]}
           onBlur={[Function]}
           onChange={[Function]}
@@ -69,8 +69,8 @@ exports[`renders correctly 1`] = `
       <label
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
         data-shrink={true}
-        htmlFor="outlined-full-width"
-        id="outlined-full-width-label"
+        htmlFor="lastName"
+        id="lastName-label"
       >
         Last Name
       </label>
@@ -83,7 +83,7 @@ exports[`renders correctly 1`] = `
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input"
           disabled={false}
-          id="outlined-full-width"
+          id="lastName"
           onAnimationStart={[Function]}
           onBlur={[Function]}
           onChange={[Function]}
@@ -117,8 +117,8 @@ exports[`renders correctly 1`] = `
       <label
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
         data-shrink={true}
-        htmlFor="outlined-full-width"
-        id="outlined-full-width-label"
+        htmlFor="phoneNumber"
+        id="phoneNumber-label"
       >
         Phone Number
       </label>
@@ -131,7 +131,7 @@ exports[`renders correctly 1`] = `
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input"
           disabled={false}
-          id="outlined-full-width"
+          id="phoneNumber"
           onAnimationStart={[Function]}
           onBlur={[Function]}
           onChange={[Function]}
@@ -165,8 +165,8 @@ exports[`renders correctly 1`] = `
       <label
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
         data-shrink={true}
-        htmlFor="outlined-full-width"
-        id="outlined-full-width-label"
+        htmlFor="gender"
+        id="gender-label"
       >
         Select
       </label>
@@ -176,9 +176,9 @@ exports[`renders correctly 1`] = `
       >
         <div
           aria-haspopup="listbox"
-          aria-labelledby="outlined-full-width-label outlined-full-width"
+          aria-labelledby="gender-label gender"
           className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-          id="outlined-full-width"
+          id="gender"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -189,7 +189,7 @@ exports[`renders correctly 1`] = `
           Male
         </div>
         <input
-          aria-describedby="outlined-full-width-helper-text"
+          aria-describedby="gender-helper-text"
           autoFocus={false}
           onAnimationStart={[Function]}
           type="hidden"
@@ -209,7 +209,7 @@ exports[`renders correctly 1`] = `
       </div>
       <p
         className="MuiFormHelperText-root MuiFormHelperText-filled"
-        id="outlined-full-width-helper-text"
+        id="gender-helper-text"
       >
         Please select gender
       </p>
