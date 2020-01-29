@@ -63,13 +63,13 @@ exports[`renders correctly 1`] = `
               </button>
             </th>
             <th
-              aria-sort={null}
+              aria-sort="ascending"
               className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-paddingNone"
               scope="col"
             >
               <span
                 aria-disabled={false}
-                className="MuiButtonBase-root MuiTableSortLabel-root"
+                className="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-active"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onDragLeave={[Function]}
@@ -86,6 +86,11 @@ exports[`renders correctly 1`] = `
                 tabIndex={0}
               >
                 Full Name
+                <span
+                  className="makeStyles-visuallyHidden-4"
+                >
+                  sorted ascending
+                </span>
                 <svg
                   aria-hidden="true"
                   className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
