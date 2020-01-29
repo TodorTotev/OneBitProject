@@ -6,6 +6,7 @@ namespace OneBitProject.Web.Controllers
     using Microsoft.AspNetCore.Mvc;
     using OneBitProject.Application.Common.Models;
     using OneBitProject.Application.Customer.Commands.Create;
+    using OneBitProject.Application.Customer.Commands.Update;
     using OneBitProject.Application.Customer.Queries.GetAll;
     using OneBitProject.Application.Customer.Queries.GetById;
 
@@ -30,7 +31,7 @@ namespace OneBitProject.Web.Controllers
         {
             try
             {
-                var result = await this.Mediator.Send(new GetCustomerByIdQuery { Id = id });
+                var result = await this.Mediator.Send(new GetCustomerByIdQuery {Id = id});
                 return this.Ok(result);
             }
             catch (Exception e)
@@ -45,7 +46,20 @@ namespace OneBitProject.Web.Controllers
             try
             {
                 await this.Mediator.Send(command);
+                return this.NoContent();
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest();
+            }
+        }
 
+        [HttpPut]
+        public async Task<ActionResult> Update(UpdateCustomerCommand command)
+        {
+            try
+            {
+                await this.Mediator.Send(command);
                 return this.NoContent();
             }
             catch (Exception e)
