@@ -2,16 +2,16 @@ import axios from "axios";
 
 const userService = {
   loadCustomers: () => {
-      return new Promise((resolve, reject) => {
-          fetch("api/Customers/GetAll", {
-              method:'GET'
-          })
-          .then(response => response.json())
-          .then(data => resolve(data))
-          .then(err => reject(err))
+    return new Promise((resolve, reject) => {
+      fetch("api/Customers/GetAll", {
+        method: "GET"
       })
+        .then(response => response.json())
+        .then(data => resolve(data))
+        .then(err => reject(err));
+    });
   },
-  addCustomer: (newData) => {
+  addCustomer: newData => {
     return new Promise((resolve, reject) => {
       fetch("api/Customers/Create", {
         method: "POST",
@@ -20,13 +20,26 @@ const userService = {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(newData)
-      }).then(res => {
-        if (res.status === 400){
-          resolve(res.json)
-        }
-        resolve()
-      }).catch(err => reject(err));
-    })
+      })
+        .then(res => {
+          if (res.status === 400) {
+            resolve(res.json);
+          }
+          resolve();
+        })
+        .catch(err => reject(err));
+    });
+  },
+  getCustomer: id => {
+    return new Promise((resolve, reject) => {
+      fetch(`/api/Customers/Get/${id}`, {
+        method: "GET",
+        headers: {}
+      })
+        .then(response => response.json())
+        .then(data => resolve(data))
+        .catch(err => reject(err));
+    });
   }
 };
 
