@@ -6,12 +6,12 @@ namespace OneBitProject.Application.Order.Commands.Create
     {
         public string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
 
-        public double Price { get; set; }
+        public string Price { get; set; }
 
         public string Status { get; set; }
 
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace OneBitProject.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(CreateOrderCommand command)
+        public async Task<ActionResult> Create([FromBody] CreateOrderCommand command)
         {
             try
             {

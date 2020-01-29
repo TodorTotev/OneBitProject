@@ -5,8 +5,6 @@ namespace OneBitProject.Application.Order.Commands.Create
     using System.Threading.Tasks;
 
     using MediatR;
-    using Microsoft.EntityFrameworkCore;
-    using OneBitProject.Application.Exceptions;
     using OneBitProject.Application.Interfaces;
 
     public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int>
@@ -25,19 +23,15 @@ namespace OneBitProject.Application.Order.Commands.Create
         public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
             request = request ?? throw new ArgumentNullException(nameof(request));
-
-            var customer = await this.customersRepository
-                               .AllAsNoTracking()
-                               .SingleOrDefaultAsync(x => x.Id == request.CustomerId)
-                           ?? throw new NotFoundException(nameof(Domain.Entities.Customer), request.CustomerId);
+            
 
             var order = new Domain.Entities.Order
             {
                 Description = request.Description,
-                Quantity = request.Quantity,
+                Quantity = int.Parse(request.Quantity),
                 Status = request.Status,
-                CustomerId = customer.Id,
-                TotalAmount = request.Quantity * request.Price,
+                TotalAmount = int.Parse(request.Quantity) * double.Parse(request.Price),
+                CustomerId = int.Parse(request.CustomerId),
             };
 
             await this.ordersRepository.AddAsync(order);

@@ -23,9 +23,8 @@ namespace OneBitProject.Tests.Order.Commands.Create
             var command = new CreateOrderCommand
             {
                 Description = "Desc",
-                Price = 123,
-                Quantity = 1,
-                CustomerId = 1,
+                Price = "123",
+                Quantity = "123",
                 Status = "Active",
             };
 
@@ -68,8 +67,7 @@ namespace OneBitProject.Tests.Order.Commands.Create
             var command = new CreateOrderCommand
             {
                 Description = "Desc",
-                Quantity = 123,
-                CustomerId = 10,
+                Quantity = "123",
                 Status = "Active",
             };
 
