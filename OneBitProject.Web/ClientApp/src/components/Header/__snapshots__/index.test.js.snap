@@ -50,7 +50,7 @@ exports[`renders correctly 1`] = `
                     aria-disabled={false}
                     aria-selected={true}
                     className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit Mui-selected"
-                    href="/home"
+                    href="/"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -76,10 +76,11 @@ exports[`renders correctly 1`] = `
                       style={Object {}}
                     />
                   </a>
-                  <button
+                  <a
+                    aria-disabled={false}
                     aria-selected={false}
                     className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit"
-                    disabled={false}
+                    href="/customers"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -94,14 +95,13 @@ exports[`renders correctly 1`] = `
                     onTouchStart={[Function]}
                     role="tab"
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="MuiTab-wrapper"
                     >
                       Customers
                     </span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

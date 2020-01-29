@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import userService from "../../../services/user-service"
+import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,7 +69,8 @@ export default function createCustomerForm() {
 
   const handleOnSubmit = () => {
     const obj = { firstName, lastName, phoneNumber, gender, status };
-    userService.addCustomer(obj)
+    userService.addCustomer(obj);
+    props.history.push("/customers")
   };
 
   return (

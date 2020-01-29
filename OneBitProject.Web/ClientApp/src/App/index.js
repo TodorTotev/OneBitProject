@@ -3,7 +3,8 @@ import { Route } from "react-router";
 import { Layout } from "../components/Layout";
 import { Home } from "../components/Home";
 import Customers from "../components/Customers/";
-import CreateCustomer from "../components/Customers/CreateForm"
+import CreateCustomer from "../components/Customers/CreateForm";
+import EditCustomer from "../components/Customers/EditForm";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Route exact path='/' component={Home} />
       <Route exact path='/customers' component={Customers} />
       <Route exact path='/createCustomer' component={CreateCustomer} />
+      <Route exact path='/editCustomer/:id' component={EditCustomer} />
     </Layout>
   );
 };
