@@ -1,8 +1,9 @@
+using OneBitProject.Application.Customer.Commands.Delete;
+
 namespace OneBitProject.Web.Controllers
 {
     using System;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Mvc;
     using OneBitProject.Application.Common.Models;
     using OneBitProject.Application.Customer.Commands.Create;
@@ -60,6 +61,20 @@ namespace OneBitProject.Web.Controllers
             try
             {
                 await this.Mediator.Send(command);
+                return this.NoContent();
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            try
+            {
+                await this.Mediator.Send(new DeleteCustomerCommand { Id = id });
                 return this.NoContent();
             }
             catch (Exception e)
