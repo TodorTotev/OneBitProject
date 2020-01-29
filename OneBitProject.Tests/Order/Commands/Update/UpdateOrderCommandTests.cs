@@ -22,8 +22,7 @@ namespace OneBitProject.Tests.Order.Commands.Update
             {
                 Id = 1,
                 Description = "NewDesc",
-                Quantity = 321,
-                TotalAmount = 5000,
+                Quantity = "321",
                 Status = "Tested",
             };
 
@@ -37,7 +36,6 @@ namespace OneBitProject.Tests.Order.Commands.Update
             order.ShouldNotBeNull();
             order.Description.ShouldBe("NewDesc");
             order.Quantity.ShouldBe(321);
-            order.TotalAmount.ShouldBe(5000);
             order.Status.ShouldBe("Tested");
         }
 
@@ -61,8 +59,8 @@ namespace OneBitProject.Tests.Order.Commands.Update
             {
                 Id = 500,
                 Description = "NewDesc",
-                Quantity = 321,
-                TotalAmount = 5000,
+                Quantity = "321",
+                Price = "123",
                 Status = "Tested",
             };
 

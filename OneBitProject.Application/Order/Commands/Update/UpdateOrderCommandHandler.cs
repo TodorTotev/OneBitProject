@@ -29,8 +29,9 @@ namespace OneBitProject.Application.Order.Commands.Update
                         ?? throw new NotFoundException(nameof(Order), request.Id);
 
             order.Description = request.Description;
-            order.TotalAmount = request.TotalAmount;
-            order.Quantity = request.Quantity;
+            order.Quantity = int.Parse(request.Quantity);
+            order.Price = int.Parse(request.Price);
+            order.TotalAmount = order.Price * order.Quantity;
             order.Status = request.Status;
 
             this.ordersRepository.Update(order);
