@@ -18,9 +18,9 @@ const orderService = {
           .catch(err => reject(err));
       });
     },
-    getOrder: id => {
+    getOrders: id => {
       return new Promise((resolve, reject) => {
-        fetch(`/api/Orders/Get/${id}`, {
+        fetch(`/api/Orders/GetAll/${id}`, {
           method: "GET",
           headers: {}
         })
@@ -29,7 +29,18 @@ const orderService = {
           .catch(err => reject(err));
       });
     },
-    updateCustomer: data => {
+    getOrder: id => {
+        return new Promise((resolve, reject) => {
+          fetch(`/api/Orders/Get/${id}`, {
+            method: "GET",
+            headers: {}
+          })
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(err => reject(err));
+        });
+      },
+    updateOrder: data => {
       return new Promise((resolve, reject) => {
         fetch("api/Orders/Update", {
           method: "PUT",
