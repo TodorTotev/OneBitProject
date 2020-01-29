@@ -7,6 +7,7 @@ namespace OneBitProject.Web.Controllers
     using OneBitProject.Application.Order.Commands.Create;
     using OneBitProject.Application.Order.Commands.Delete;
     using OneBitProject.Application.Order.Commands.Update;
+    using OneBitProject.Application.Order.Queries.GetById;
     using OneBitProject.Application.Order.Queries.GetOrder;
 
     public class OrdersController : BaseController
@@ -16,7 +17,21 @@ namespace OneBitProject.Web.Controllers
         {
             try
             {
-                var result = await this.Mediator.Send(new GetOrderByCustomerIdQuery { Id = id });
+                var result = await this.Mediator.Send(new GetOrderByIdQuery { Id = id });
+                return this.Ok(result);
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest();
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetAllOrdersViewModel>> GetAll(int id)
+        {
+            try
+            {
+                var result = await this.Mediator.Send(new GetOrderByCustomerIdQuery {Id = id});
                 return this.Ok(result);
             }
             catch (Exception e)
@@ -58,7 +73,7 @@ namespace OneBitProject.Web.Controllers
         {
             try
             {
-                await this.Mediator.Send(new DeleteOrderCommand { Id = id });
+                await this.Mediator.Send(new DeleteOrderCommand {Id = id});
                 return this.NoContent();
             }
             catch (Exception e)
