@@ -12,7 +12,7 @@ namespace OneBitProject.Web.Controllers
     public class OrdersController : BaseController
     {
         [HttpGet("{id}")]
-        public async Task<ActionResult<GetAllOrdersViewModel>> GetOrder(int id)
+        public async Task<ActionResult<GetAllOrdersViewModel>> Get(int id)
         {
             try
             {

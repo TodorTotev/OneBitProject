@@ -37,7 +37,7 @@ namespace OneBitProject.Application.Order.Commands.Create
                 Quantity = request.Quantity,
                 Status = request.Status,
                 CustomerId = customer.Id,
-                TotalAmount = request.TotalAmount,
+                TotalAmount = request.Quantity * request.Price,
             };
 
             await this.ordersRepository.AddAsync(order);

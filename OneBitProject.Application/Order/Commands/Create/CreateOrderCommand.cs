@@ -8,7 +8,7 @@ namespace OneBitProject.Application.Order.Commands.Create
 
         public int Quantity { get; set; }
 
-        public double TotalAmount { get; set; }
+        public double Price { get; set; }
 
         public string Status { get; set; }
 
