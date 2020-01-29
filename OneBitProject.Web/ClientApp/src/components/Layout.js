@@ -9,6 +9,8 @@ export class Layout extends Component {
     return (
       <div>
         <Header />
+        <br/>
+        <br/>
         <Container>{this.props.children}</Container>
       </div>
     );
