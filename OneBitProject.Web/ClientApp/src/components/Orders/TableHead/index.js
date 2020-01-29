@@ -22,6 +22,12 @@ const headCells = [
     disablePadding: false,
     label: "Quantity"
   },
+  {
+    id: "totalAmount",
+    numeric: true,
+    disablePadding: false,
+    label: "Total Amount"
+  },
   { id: "status", numeric: true, disablePadding: false, label: "Status" },
   {
     id: "createdOn",
@@ -39,7 +45,7 @@ const CustomTableHead = props => {
   };
 
   const handleAdd = () => {
-    window.location.href = "/createOrder";
+    window.location.href = `/createOrder/${props.id}`;
   };
 
   return (
