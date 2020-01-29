@@ -18,8 +18,8 @@ namespace OneBitProject.Tests.Customer.Commands.Delete
     public class DeleteCustomerCommandTests : BaseTest<Customer>
     {
         [Trait(nameof(Customer), "DeleteCustomer command tests")]
-        [Fact(DisplayName = "Handle given valid request should delete category")]
-        public async Task Handle_GivenValidRequest_ShouldDeleteCategory()
+        [Fact(DisplayName = "Handle given valid request should delete Customer")]
+        public async Task Handle_GivenValidRequest_ShouldDeleteCustomer()
         {
             // Arrange
             var command = new DeleteCustomerCommand { Id = 1 };

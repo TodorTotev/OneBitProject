@@ -35,7 +35,9 @@ namespace OneBitProject.Application.Customer.Commands.Delete
                 throw new EntityAlreadyDeletedException(nameof(Customer), request.Id, EntityAlreadyDeletedMessage);
             }
 
-            this.customersRepository.Delete(customer);
+            customer.IsDeleted = true;
+            customer.Status = "Deleted";
+            this.customersRepository.Update(customer);
             await this.customersRepository.SaveChangesAsync(cancellationToken);
 
             return customer.Id;
