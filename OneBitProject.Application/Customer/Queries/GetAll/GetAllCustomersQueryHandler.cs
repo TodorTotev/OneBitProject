@@ -1,6 +1,7 @@
 namespace OneBitProject.Application.Customer.Queries.GetAll
 {
     using System;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace OneBitProject.Application.Customer.Queries.GetAll
 
             var customers = await this.customersRepository
                 .All()
+                .Where(x => x.Status != "Deleted")
                 .To<CustomerLookupModel>()
                 .ToListAsync(cancellationToken);
 
