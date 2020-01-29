@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundImage": "url(\\"https://cdn.dribbble.com/users/226011/screenshots/2424315/08_404.png\\")",
+    }
+  }
+  width="max"
+>
+  <p
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h1>
+      404 NOT FOUND!
+    </h1>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+       Go to Home 
+    </a>
+  </p>
+</div>
+`;
