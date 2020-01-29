@@ -1,3 +1,5 @@
+using OneBitProject.Tests.Infrastructure.Seeding;
+
 namespace OneBitProject.Tests.Infrastructure
 {
     using System.Reflection;
@@ -9,7 +11,8 @@ namespace OneBitProject.Tests.Infrastructure
         public static void InitializeMapper()
         {
             AutoMapperConfig.RegisterMappings(
-                typeof(CustomerLookupModel).GetTypeInfo().Assembly);
+                typeof(CustomerLookupModel).GetTypeInfo().Assembly,
+                typeof(ITestSeeder).GetTypeInfo().Assembly);
         }
     }
 }

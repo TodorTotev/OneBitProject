@@ -14,6 +14,7 @@ namespace OneBitProject.Tests.Infrastructure.Seeding
                 Quantity = 100000,
                 TotalAmount = 10000,
                 Status = "Active",
+                CustomerId = 1,
             });
 
             dbContext.Orders.AddAsync(new Order
@@ -23,6 +24,8 @@ namespace OneBitProject.Tests.Infrastructure.Seeding
                 Quantity = 1,
                 TotalAmount = 1,
                 Status = "Inactive",
+                IsDeleted = true,
+                CustomerId = 2,
             });
         }
     }
