@@ -19,6 +19,8 @@ namespace OneBitProject.Application.Common.Models
 
         public string PhoneNumber { get; set; }
 
+        public string CreatedOn { get; set; }
+
         public ICollection<Order> Orders { get; set; }
     }
 }
