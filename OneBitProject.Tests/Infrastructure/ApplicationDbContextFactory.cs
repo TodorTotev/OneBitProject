@@ -33,6 +33,7 @@ namespace OneBitProject.Tests.Infrastructure
             var seeders = new List<ITestSeeder>
             {
                 new CustomerSeeder(),
+                new OrderSeeder(),
             };
 
             foreach (var seeder in seeders)
