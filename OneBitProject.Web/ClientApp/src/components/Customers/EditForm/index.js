@@ -38,7 +38,7 @@ const statuses = [
     label: "Inactive"
   }
 ];
-export default function editCustomerForm(props) {
+const EditCustomerForm = (props) => {
   const classes = useStyles();
 
   const [id, setId] = React.useState();
@@ -188,3 +188,5 @@ export default function editCustomerForm(props) {
     </div>
   );
 }
+
+export default withRouter(EditCustomerForm)

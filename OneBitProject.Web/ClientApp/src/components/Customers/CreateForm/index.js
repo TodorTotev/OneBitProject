@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-import userService from "../../../services/user-service"
+import userService from "../../../services/user-service";
 import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +38,7 @@ const statuses = [
     label: "Inactive"
   }
 ];
-export default function createCustomerForm() {
+const CreateUserForm= (props) => {
   const classes = useStyles();
 
   const [gender, setGender] = React.useState("Male");
@@ -67,10 +67,13 @@ export default function createCustomerForm() {
     setStatus(event.target.value);
   };
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
     const obj = { firstName, lastName, phoneNumber, gender, status };
-    userService.addCustomer(obj);
-    props.history.push("/customers")
+    userService.addCustomer(obj)
+    .then(() => {
+      props.history.push("/customers")
+    })
   };
 
   return (
@@ -155,3 +158,5 @@ export default function createCustomerForm() {
     </div>
   );
 }
+
+export default withRouter(CreateUserForm)
