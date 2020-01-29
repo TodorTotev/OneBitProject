@@ -30,6 +30,7 @@ namespace OneBitProject.Application.Order.Commands.Create
                 Description = request.Description,
                 Quantity = int.Parse(request.Quantity),
                 Status = request.Status,
+                Price = double.Parse(request.Price),
                 TotalAmount = int.Parse(request.Quantity) * double.Parse(request.Price),
                 CustomerId = int.Parse(request.CustomerId),
             };
