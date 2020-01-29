@@ -126,7 +126,7 @@ const EditCustomerForm = (props) => {
       <h1>Edit customer</h1>
       <form onSubmit={handleOnSubmit}>
         <TextField
-          id='outlined-full-width'
+          id='firstName'
           label='First Name'
           style={{ margin: 8 }}
           value={firstName}
@@ -139,7 +139,7 @@ const EditCustomerForm = (props) => {
           variant='outlined'
         />
         <TextField
-          id='outlined-full-width'
+          id='lastName'
           label='Last Name'
           style={{ margin: 8 }}
           value={lastName}
@@ -152,7 +152,7 @@ const EditCustomerForm = (props) => {
           variant='outlined'
         />
         <TextField
-          id='outlined-full-width'
+          id='phoneNumber'
           label='Phone Number'
           style={{ margin: 8 }}
           value={phoneNumber}
@@ -165,7 +165,7 @@ const EditCustomerForm = (props) => {
           variant='outlined'
         />
         <TextField
-          id='outlined-full-width'
+          id='gender'
           select
           label='Select'
           style={{ margin: 8 }}

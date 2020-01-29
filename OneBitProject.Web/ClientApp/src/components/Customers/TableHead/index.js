@@ -9,28 +9,28 @@ import PropTypes from "prop-types";
 import TableCell from "@material-ui/core/TableCell";
 
 const headCells = [
-    {
-      id: "name",
-      numeric: false,
-      disablePadding: true,
-      label: "Full Name"
-    },
-    { id: "gender", numeric: true, disablePadding: false, label: "Gender" },
-    {
-      id: "phoneNumber",
-      numeric: true,
-      disablePadding: false,
-      label: "Phone Number"
-    },
-    { id: "status", numeric: true, disablePadding: false, label: "Status" },
-    {
-      id: "createdOn",
-      numeric: true,
-      disablePadding: false,
-      label: "Created On"
-    },
-    { id: "actions", numeric: true, disablePadding: false, label: " Actions" }
-  ];
+  {
+    id: "name",
+    numeric: false,
+    disablePadding: true,
+    label: "Full Name"
+  },
+  { id: "gender", numeric: true, disablePadding: false, label: "Gender" },
+  {
+    id: "phoneNumber",
+    numeric: true,
+    disablePadding: false,
+    label: "Phone Number"
+  },
+  { id: "status", numeric: true, disablePadding: false, label: "Status" },
+  {
+    id: "createdOn",
+    numeric: true,
+    disablePadding: false,
+    label: "Created On"
+  },
+  { id: "actions", numeric: true, disablePadding: false, label: " Actions" }
+];
 
 const CustomTableHead = props => {
   const { classes, order, orderBy, onRequestSort } = props;
@@ -38,11 +38,15 @@ const CustomTableHead = props => {
     onRequestSort(event, property);
   };
 
+  const handleAdd = () => {
+    window.location.href = "/createCustomer";
+  };
+
   return (
     <TableHead>
       <TableRow>
         <TableCell padding='checkbox'>
-          <IconButton onClick={() => console.log(row.id)} aria-label='delete'>
+          <IconButton onClick={() => handleAdd()} aria-label='delete'>
             <AddBoxIcon />
           </IconButton>
         </TableCell>
