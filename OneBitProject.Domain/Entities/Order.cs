@@ -10,6 +10,8 @@ namespace OneBitProject.Domain.Entities
 
         public int Quantity { get; set; }
 
+        public double Price { get; set; }
+
         public double TotalAmount { get; set; }
 
         public string Status { get; set; }
