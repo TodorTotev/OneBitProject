@@ -14,5 +14,7 @@ namespace OneBitProject.Application.Common.Models
         public double TotalAmount { get; set; }
 
         public string Status { get; set; }
+
+        public string CreatedOn { get; set; }
     }
 }
