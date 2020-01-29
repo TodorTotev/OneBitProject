@@ -57,6 +57,23 @@ const userService = {
         })
         .catch(err => reject(err));
     });
+  },
+  deleteCustomer: id => {
+    return new Promise((resolve, reject) => {
+      fetch(`api/Customers/Delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => {
+          if (res.status === 400) {
+            resolve(res.json);
+          }
+          resolve();
+        })
+        .catch(err => reject(err));
+    });
   }
 };
 
