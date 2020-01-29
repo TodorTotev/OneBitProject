@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <nav className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position='static' color='default'>
         <Toolbar>
           <Grid justify={"space-between"} container>
             <Grid xs={1} item>
@@ -31,19 +31,13 @@ const Header = () => {
                 src={
                   "https://upload.wikimedia.org/wikipedia/commons/d/d8/Billa-Logo.svg"
                 }
-                alt="Bosch Logo"
+                alt='Bosch Logo'
               />
             </Grid>
             <Grid xs={4} item>
               <Grid container justify={"center"}>
-                <Tabs
-                  onChange={(e, v) => setValue(v)}
-                  value={value}
-                  aria-label="Navigation Tabs"
-                >
-                  <Tab value={0} href="/" label={"Home"} />
-                  <Tab value={1} href="/customers"label={"Customers"} />
-                </Tabs>
+                  <Tab href='/' label={"Home"} />
+                  <Tab href='/customers' label={"Customers"} />
               </Grid>
             </Grid>
             <Grid item xs={1} />
