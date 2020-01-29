@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
 const Customers = (props) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("calories");
+  const [orderBy, setOrderBy] = React.useState("name");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [rows, setRows] = React.useState([]);
@@ -152,8 +152,7 @@ const Customers = (props) => {
                       </TableCell>
                       <TableCell align='right'>
                         <IconButton
-                          onClick={() => console.log(row.id)}
-                          aria-label='delete'>
+                          onClick={() => window.location.href=`orders/:${row.id}`}>
                           <ViewComfyIcon />
                         </IconButton>
                         <IconButton onClick={() => handleEdit(row.id)} aria-label='delete'>
