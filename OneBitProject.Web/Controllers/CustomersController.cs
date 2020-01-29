@@ -1,12 +1,12 @@
-using OneBitProject.Application.Customer.Commands.Delete;
-
 namespace OneBitProject.Web.Controllers
 {
     using System;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Mvc;
     using OneBitProject.Application.Common.Models;
     using OneBitProject.Application.Customer.Commands.Create;
+    using OneBitProject.Application.Customer.Commands.Delete;
     using OneBitProject.Application.Customer.Commands.Update;
     using OneBitProject.Application.Customer.Queries.GetAll;
     using OneBitProject.Application.Customer.Queries.GetById;
