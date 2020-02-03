@@ -1,0 +1,28 @@
+using PA.Application.Interfaces.Mapping;
+
+namespace PA.Application.Common.Models
+{
+    using System.Collections.Generic;
+
+    using Application.Interfaces.Mapping;
+    using PA.Domain.Entities;
+
+    public class CustomerLookupModel : IMapFrom<Customer>
+    {
+        public int Id { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Gender { get; set; }
+
+        public string Status { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public string CreatedOn { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
+    }
+}
